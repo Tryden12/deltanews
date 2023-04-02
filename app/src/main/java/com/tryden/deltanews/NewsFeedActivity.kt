@@ -13,14 +13,11 @@ class NewsFeedActivity : AppCompatActivity() {
         val binding: ActivityNewsFeedBinding =
             DataBindingUtil.setContentView(this, R.layout.activity_news_feed)
 
-//        val viewModel: NewsFeedViewModel = ViewModelProvider(this)[NewsFeedViewModel::class.java]
-//
-//        binding.lifecycleOwner = this
-//        binding.viewModel = viewModel
+        val viewModel: NewsFeedViewModel = ViewModelProvider(this)[NewsFeedViewModel::class.java]
 
-        binding.textOnScreen = "hello"
-        binding.textView.postDelayed({
-            binding.textOnScreen = "Hello, again"
-        }, 2_000)
+        binding.lifecycleOwner = this
+        binding.viewModel = viewModel
+
+        viewModel.fetchNewsFeed()
     }
 }

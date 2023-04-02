@@ -9,25 +9,19 @@
         android:layout_height="match_parent"
         tools:context=".NewsFeedActivity">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="@{textOnScreen}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Delta News"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <data>
-        <variable
-            name="textOnScreen"
-            type="String" />
 
+        <variable
+            name="viewModel"
+            type="com.tryden.deltanews.NewsFeedViewModel" />
     </data>
 
 </layout>
