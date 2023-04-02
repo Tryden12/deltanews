@@ -7,6 +7,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?background"
         tools:context=".newsfeed.NewsFeedActivity">
 
         <androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="24dp"
+            setItems="@{viewModel.newsFeedLiveData}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

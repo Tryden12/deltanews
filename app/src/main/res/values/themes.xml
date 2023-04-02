@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="colorSurface">@color/gray</item>
         <item name="colorOnSurface">@color/white</item>
-        <item name="background">@color/gray</item>
+        <item name="background">@color/off_white</item>
         <item name="colorOnBackground">@color/white</item>
     </style>
 </resources>

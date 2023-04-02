@@ -25,9 +25,9 @@ class NewsFeedRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setItems(newsFeedItems: List<NewsFeedItem>) {
+    fun setItems(newsFeedItems: List<NewsFeedItem>?) {
         this.newsFeedItems.clear()
-        this.newsFeedItems.addAll(newsFeedItems)
+        this.newsFeedItems.addAll(newsFeedItems ?: emptyList())
         notifyDataSetChanged()
     }
 
@@ -37,8 +37,8 @@ class NewsFeedRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         private val binding = ViewHolderNewsFeedItemBinding.bind(itemView)
         fun onBind(newsFeedItem: NewsFeedItem) {
-            binding.titleTextView.text = newsFeedItem.title
-            binding.descriptionTextView.text = newsFeedItem.description
+            binding.title = newsFeedItem.title
+            binding.description = newsFeedItem.description
         }
     }
 }
