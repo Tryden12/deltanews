@@ -1,9 +1,10 @@
-package com.tryden.deltanews
+package com.tryden.deltanews.newsfeed
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import com.tryden.deltanews.R
 import com.tryden.deltanews.databinding.ActivityNewsFeedBinding
 
 class NewsFeedActivity : AppCompatActivity() {
@@ -18,6 +19,12 @@ class NewsFeedActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
+        val newsFeedAdapter = NewsFeedRecyclerViewAdapter()
+        binding.recyclerView.adapter = newsFeedAdapter
+
         viewModel.fetchNewsFeed()
+        viewModel.newsFeedLiveData.observe(this) { newsFeedItems ->
+            newsFeedAdapter.setItems(newsFeedItems)
+        }
     }
 }

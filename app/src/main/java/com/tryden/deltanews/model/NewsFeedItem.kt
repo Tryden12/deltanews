@@ -1,4 +1,4 @@
-package com.tryden.deltanews
+package com.tryden.deltanews.model
 
 data class NewsFeedItem(
     val title: String = "",
