@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import com.tryden.deltanews.R
 import com.tryden.deltanews.databinding.ViewHolderNewsFeedItemBinding
 import com.tryden.deltanews.model.NewsFeedItem
@@ -39,6 +40,9 @@ class NewsFeedRecyclerViewAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>
         fun onBind(newsFeedItem: NewsFeedItem) {
             binding.title = newsFeedItem.title
             binding.description = newsFeedItem.description
+            binding.source = newsFeedItem.source
+            binding.published = newsFeedItem.published
+            binding.imageUrl = newsFeedItem.imageUrl
         }
     }
 }
