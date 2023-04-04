@@ -6,25 +6,23 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?background">
+        android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+        <WebView
+            android:id="@+id/webView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingBottom="24dp"
-            setItems="@{viewModel.newsFeedLiveData}"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:loadUrlIntoWebView="@{url}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <data>
-
         <variable
-            name="viewModel"
-            type="com.tryden.deltanews.newsfeed.NewsFeedViewModel" />
+            name="url"
+            type="String" />
     </data>
-
 </layout>
