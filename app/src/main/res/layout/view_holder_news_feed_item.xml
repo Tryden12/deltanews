@@ -36,7 +36,8 @@
                 android:padding="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:tint="?colorOnSurface"/>
+                app:tint="?colorOnSurface"
+                tools:src="@drawable/ic_favorite_24" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/sourceTextView"

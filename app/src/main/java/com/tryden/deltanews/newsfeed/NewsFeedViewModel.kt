@@ -7,7 +7,7 @@ import com.tryden.deltanews.model.NewsFeedItem
 
 class NewsFeedViewModel : ViewModel() {
 
-    val repository = NewsRepository()
+    private val repository = NewsRepository()
 
     private val _newsFeedLiveData = MutableLiveData<List<NewsFeedItem>>()
     val newsFeedLiveData: LiveData<List<NewsFeedItem>> = _newsFeedLiveData
@@ -16,4 +16,7 @@ class NewsFeedViewModel : ViewModel() {
         repository.fetchNewsFeed(_newsFeedLiveData)
     }
 
+    fun updateFavoriteStatus(id: String, isFavorite: Boolean) {
+        repository.updateFavoriteStatus(id, isFavorite)
+    }
 }
